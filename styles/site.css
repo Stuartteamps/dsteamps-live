@@ -14,9 +14,13 @@
   --ink:          #141414;   /* body text — 15.9:1 on white */
   --ink-soft:     #4a4a4a;   /* secondary text — 8.9:1 on white, still AA at any size */
   --rule:         #e4ded3;
-  --gold:         #c9a227;   /* decoration ONLY: rules, borders, fills */
-  --gold-ink:     #7d5d1f;   /* the only gold permitted on text — 5.6:1 on white */
-  --gold-ink-warm:#6f531b;   /* on --paper-warm */
+  /* Accent is the Stuart Team brand magenta, taken from the logo (#eb0f6f).
+     The logo colour itself measures 4.35:1 on white -- under AA -- so it is
+     used as artwork and on fills only. Text and rules use the darkened
+     --brand-ink at 5.79:1, which passes AA and still reads as the brand. */
+  --gold:         #eb0f6f;   /* decoration ONLY: rules, borders, fills */
+  --gold-ink:     #c70a5c;   /* the only accent permitted on text — 5.79:1 */
+  --gold-ink-warm:#b50953;   /* on --paper-warm */
   --focus:        #1a4fd6;
 
   --measure: 68ch;
@@ -192,3 +196,21 @@ figcaption { font-size: .9rem; color: var(--ink-soft); padding-top: .7rem; }
 }
 .pair { display: grid; gap: clamp(1.25rem,1rem+1.5vw,2.25rem); }
 @media (min-width: 820px) { .pair { grid-template-columns: 1fr 1fr; } }
+
+
+/* ---- Brand mark + about ------------------------------------------------ */
+.brand { display: inline-flex; align-items: center; gap: .7rem; }
+.brand img { height: 38px; width: auto; display: block; }
+.brand span { font-family: var(--display); font-size: 1.22rem; font-weight: 600; }
+@media (max-width: 620px) { .brand span { display: none; } }
+
+.about { display: grid; gap: clamp(1.5rem, 1rem + 3vw, 3.5rem); align-items: start; }
+@media (min-width: 860px) { .about { grid-template-columns: minmax(260px, 360px) 1fr; } }
+.about__photo { overflow: clip; }
+.about__photo img { display: block; width: 100%; height: auto; }
+.credential {
+  display: flex; gap: .85rem; align-items: flex-start;
+  border-left: 3px solid var(--gold); padding: .9rem 0 .9rem 1.1rem; margin: 1.5rem 0;
+}
+.credential strong { display: block; color: var(--ink); }
+.credential span { color: var(--ink-soft); font-size: .95rem; }
