@@ -258,6 +258,16 @@ a { color: inherit; text-underline-offset: .2em; text-decoration-thickness: 1px;
 .day__panel:not(.day__panel--dark) .day__text { color: var(--ink); }
 .day__panel--dark .day__text { color: #fbf4ec; }
 .day__panel--dark .day__time::before { background: #f0a99a; }
+/* Photo panels (Nov 2026): licensed photographs carry light type over a
+   measured scrim, worst-case 95th-percentile background >= 4.5:1 at
+   1440/520/390px (evidence/chapter3/contrast.json). */
+.day__scrim { position: absolute; inset: 0; z-index: 1; pointer-events: none;
+  background: linear-gradient(180deg, rgba(16, 13, 12, var(--s-top, .58)) 0%, rgba(16, 13, 12, var(--s-mid, .5)) 34%, rgba(16, 13, 12, .18) 56%, rgba(16, 13, 12, 0) 72%),
+              linear-gradient(90deg, rgba(16, 13, 12, var(--s-side, .42)) 0%, rgba(16, 13, 12, .2) 40%, transparent 62%); }
+@media (max-width: 760px) {
+  .day__scrim { background: linear-gradient(180deg, rgba(16, 13, 12, var(--s-top, .58)) 0%, rgba(16, 13, 12, var(--s-mid-m, .56)) 40%, rgba(16, 13, 12, .2) 58%, rgba(16, 13, 12, 0) 74%); }
+}
+.day__panel--photo .grain { z-index: 1; }
 .day__panel--dark .plate-note { color: #fbf4ec; background: rgba(30, 26, 38, .55); }
 .day__ticks { display: none; }
 /* Scroll-linked crossfade only when motion is on. Otherwise: three stacked panels. */
