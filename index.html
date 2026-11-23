@@ -56,12 +56,16 @@ Based on closed adjusted gross commission income and/or total units.</span></div
 <p class="eyebrow">Free valuation</p>
 <h2>What&#x27;s Your Palm Springs Home Worth?</h2><hr class="rule-gold">
 <p class="lede">Send the address. Dan prepares a written valuation for that specific property, with the comparable sales behind the number.</p>
-<form class="val-form" id="val-form" action="mailto:stuartteamps@gmail.com?subject=Home%20valuation%20request" method="post" enctype="text/plain">
+<form class="val-form" id="val-form" action="mailto:stuartteamps@gmail.com?subject=Home%20valuation%20request" method="post" enctype="text/plain" novalidate>
 <label>Property address<input name="address" required autocomplete="street-address" placeholder="Street, city"></label>
-<label>Your name<input name="name" autocomplete="name"></label>
-<label>Best phone<input name="phone" type="tel" autocomplete="tel"></label>
+<label>Email<input name="email" type="email" required autocomplete="email"></label>
+<div class="val-row"><label>Name<input name="name" autocomplete="name"></label>
+<label>Phone <span class="opt">(optional)</span><input name="phone" type="tel" autocomplete="tel"></label></div>
+<label>Timeline<select name="timeline"><option value="">Just curious</option><option>Selling in 0–3 months</option><option>Selling in 3–12 months</option><option>Refinancing / planning</option></select></label>
+<label class="hp" aria-hidden="true">Website<input name="website" tabindex="-1" autocomplete="off"></label>
 <button class="btn" type="submit">Request my valuation</button>
-<p class="val-note">Opens a pre-filled email to Dan. Prefer to talk? Call or text <a href="tel:+16196770900">(619) 677-0900</a>.</p>
+<p class="val-note">Dan contacts you about this property only. No mailing lists. Prefer to talk? Call or text <a href="tel:+16196770900">(619) 677-0900</a>.</p>
+<p class="val-status" role="status" aria-live="polite"></p>
 </form>
 <p class="hero__ctas"><a class="btn" href="tel:+16196770900">Call (619) 677-0900</a>
 <a class="btn btn--ghost" href="mailto:stuartteamps@gmail.com?subject=Home%20valuation%20request">Email Dan</a></p>
@@ -72,4 +76,5 @@ Based on closed adjusted gross commission income and/or total units.</span></div
 <p class="identity">&copy; 2026 Stuart Team Real Estate Group. Equal Housing Opportunity.</p></div></footer>
 <script src="scripts/motion.js" defer></script>
 <script src="scripts/valuation.js" defer></script>
+<script src="scripts/track.js" defer></script>
 </body></html>

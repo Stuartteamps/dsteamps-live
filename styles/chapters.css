@@ -38,3 +38,10 @@
  .site-head__inner{min-height:60px;justify-content:space-between}
  .site-head .btn{padding:.55rem .8rem;font-size:.85rem;white-space:nowrap}
  .brand img{width:36px;height:36px}}
+.val-form select{font:inherit;padding:12px 14px;border:1px solid var(--rule);background:#fff;color:var(--ink)}
+.val-row{display:grid;gap:14px}@media (min-width:560px){.val-row{grid-template-columns:1fr 1fr}}
+.val-form .opt{font-weight:400;color:var(--ink-soft)}
+.val-form .hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
+.val-status{font-size:.9rem;margin:0;min-height:1.2em}
+.val-done{font-size:1.05rem;padding:18px 20px;border-left:3px solid var(--gold);background:#fff;margin:0}
+.btn[disabled]{opacity:.6;cursor:wait}
