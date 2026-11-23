@@ -1,0 +1,40 @@
+/* Five-chapter photography layer for dsteamps.com. Transform/opacity only; text stays in HTML. */
+.hero__media picture,.hero__media img{display:block;width:100%;height:100%;object-fit:cover}
+.chapter__grid{display:grid;gap:clamp(24px,4vw,64px);align-items:center;position:relative}
+@media (min-width:860px){.chapter__grid{grid-template-columns:minmax(0,1.55fr) minmax(0,1fr)}
+ .chapter--flip .chapter__grid{grid-template-columns:minmax(0,1fr) minmax(0,1.55fr)}
+ .chapter--flip .chapter__media{order:2}}
+.chapter__media{margin:0;aspect-ratio:16/10;overflow:hidden}
+.chapter__media picture,.chapter__media img,.chapter__detail picture,.chapter__detail img{display:block;width:100%;height:100%;object-fit:cover}
+.chapter__detail{display:none;margin:0}
+@media (min-width:1100px){.chapter__detail{display:block;position:absolute;width:200px;aspect-ratio:4/5;left:calc(60% - 120px);bottom:-48px;box-shadow:0 30px 60px -30px rgba(0,0,0,.4);overflow:hidden}}
+.chapter__num{font-family:var(--display);color:var(--gold-ink);letter-spacing:0;margin-right:.4em}
+@media (max-width:859px){.chapter__media{aspect-ratio:4/5}}
+.about__photo picture{display:block}
+.val-form{display:grid;gap:14px;max-width:520px;margin:1.5rem 0}
+.val-form label{display:grid;gap:6px;font-size:.9rem;font-weight:500}
+.val-form input{font:inherit;padding:12px 14px;border:1px solid var(--rule);border-radius:0;background:#fff;color:var(--ink)}
+.val-form input:focus-visible{outline:2px solid var(--focus);outline-offset:1px}
+.val-form .btn{justify-self:start;cursor:pointer}
+.val-note{font-size:.85rem;color:var(--ink-soft);margin:0}
+.action-bar{display:none}
+@media (max-width:760px){
+ .action-bar{display:grid;grid-template-columns:repeat(3,1fr);position:fixed;left:0;right:0;bottom:0;z-index:50;background:var(--ink);padding-bottom:env(safe-area-inset-bottom)}
+ .action-bar a{color:#fff;text-align:center;padding:15px 6px;font-weight:500;text-decoration:none;font-size:.95rem;border-left:1px solid rgba(255,255,255,.14)}
+ .action-bar a:first-child{border-left:0}
+ .action-bar a:focus-visible{outline:2px solid #fff;outline-offset:-4px}
+ body{padding-bottom:calc(54px + env(safe-area-inset-bottom))}}
+/* Photo hero: dark scrim + light type so the photograph carries the page. Only applies once a real photo is present. */
+.hero--full:has(picture) .hero__scrim{background:linear-gradient(180deg,rgba(18,16,13,.08) 0%,rgba(18,16,13,.18) 45%,rgba(18,16,13,.66) 100%)}
+.hero--full:has(picture) .hero__inner,.hero--full:has(picture) .hero__inner h1,.hero--full:has(picture) .lede{color:#fff}
+.hero--full:has(picture) .eyebrow,.hero--full:has(picture) .chapter__num{color:rgba(255,255,255,.88)}
+.hero--full:has(picture) .hero__inner{text-shadow:0 1px 18px rgba(0,0,0,.25)}
+.hero--full:has(picture) .btn--ghost{color:#fff;border-color:#fff}
+.hero--full:has(picture) .btn--ghost:hover{color:var(--ink);background:#fff}
+@media (min-width:1100px){.chapter__detail{left:calc(58% - 250px)}}
+/* Compact mobile header: action bar covers contact, nav moves out of the way */
+@media (max-width:760px){
+ .site-nav{display:none}
+ .site-head__inner{min-height:60px;justify-content:space-between}
+ .site-head .btn{padding:.55rem .8rem;font-size:.85rem;white-space:nowrap}
+ .brand img{width:36px;height:36px}}

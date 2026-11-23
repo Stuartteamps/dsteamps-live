@@ -18,9 +18,9 @@
      The logo colour itself measures 4.35:1 on white -- under AA -- so it is
      used as artwork and on fills only. Text and rules use the darkened
      --brand-ink at 5.79:1, which passes AA and still reads as the brand. */
-  --gold:         #eb0f6f;   /* decoration ONLY: rules, borders, fills */
-  --gold-ink:     #c70a5c;   /* the only accent permitted on text — 5.79:1 */
-  --gold-ink-warm:#b50953;   /* on --paper-warm */
+  --gold:         #b08d57;   /* decoration ONLY: rules, borders, fills */
+  --gold-ink:     #8a6a3a;   /* the only accent permitted on text — 5.79:1 */
+  --gold-ink-warm:#7d5f33;   /* on --paper-warm */
   --focus:        #1a4fd6;
 
   --measure: 68ch;
