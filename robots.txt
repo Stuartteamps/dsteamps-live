@@ -1,5 +1,7 @@
 User-agent: *
 Allow: /
+# Gated download: reached from /relocation/ after the form.
+Disallow: /guides/
 
 # Answer engines are a first-class traffic source for these pages.
 User-agent: GPTBot
