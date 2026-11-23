@@ -168,9 +168,15 @@ a { color: inherit; text-underline-offset: .2em; text-decoration-thickness: 1px;
 /* Photo opening: light type over a modest, adjustable scrim. */
 .scape--photo .layer { inset: -6% 0 0; height: 112%; }
 .scape--photo img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 62%; }
+/* Scrim tuned for the bright midday drone hero (Nov 2026): measured so the
+   lede and small labels clear 4.5:1 and the H1 clears 3:1 at 1440/520/390px
+   (worst-case 95th-percentile background, not the average). */
 .land__scrim { position: absolute; inset: 0; z-index: 1;
-  background: linear-gradient(180deg, rgba(18, 14, 10, .58) 0%, rgba(18, 14, 10, .28) 48%, rgba(18, 14, 10, .05) 70%, rgba(18, 14, 10, .35) 100%),
-              linear-gradient(90deg, rgba(18, 14, 10, .35), transparent 65%); }
+  background: linear-gradient(180deg, rgba(18, 14, 10, .62) 0%, rgba(18, 14, 10, .46) 40%, rgba(18, 14, 10, .40) 72%, rgba(18, 14, 10, .30) 88%, rgba(18, 14, 10, .45) 100%),
+              linear-gradient(90deg, rgba(18, 14, 10, .50) 0%, rgba(18, 14, 10, .30) 45%, transparent 75%); }
+@media (max-width: 760px) {
+  .land__scrim { background: linear-gradient(180deg, rgba(18, 14, 10, .62) 0%, rgba(18, 14, 10, .55) 45%, rgba(18, 14, 10, .52) 62%, rgba(18, 14, 10, .25) 80%, rgba(18, 14, 10, .35) 100%); }
+}
 .ch--land-photo .land__content, .ch--land-photo .scroll-cue { color: #fbf6ee; }
 .ch--land-photo .land__lede { color: rgba(251, 246, 238, .9); }
 .ch--land-photo .land__kicker, .ch--land-photo .ch-label { color: #f3d3bd; }
@@ -445,3 +451,4 @@ a { color: inherit; text-underline-offset: .2em; text-decoration-thickness: 1px;
   .site-head, .rail, .scroll-cue, .land__media, .day__media { display: none !important; }
   .ch--land { height: auto; min-height: 0; }
 }
+.scape--photo picture { display: block; width: 100%; height: 100%; }
