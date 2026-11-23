@@ -81,6 +81,7 @@
   var ref = document.referrer && document.referrer.indexOf(location.host) === -1 ? document.referrer : "";
   var attr = attribution(location.search, ref, location.pathname, stored);
   try { sessionStorage.setItem(KEY, JSON.stringify(attr)); } catch (e) { /* private mode */ }
+  root.dsteampsAttr = attr;   // analytics.js reads utm_* from here (never form fields)
 
   var params = {};
   location.search.replace(/^\?/, "").split("&").forEach(function (kv) {
@@ -142,7 +143,12 @@
             form.reset();
             status.textContent = form.getAttribute("data-success") || "Received. Dan Stuart will be in touch shortly.";
             reveal();
-            try { (window.dataLayer = window.dataLayer || []).push({ event: "lead_submit", lead_type: data.type }); } catch (e) { }
+            // Analytics conversion: ONLY here, after the endpoint said ok:true.
+            // lead_type + page_type + utm_* only; never a form field value.
+            try {
+              if (window.dsteampsTrack) window.dsteampsTrack("Lead", { lead_type: data.type });
+              else (window.dataLayer = window.dataLayer || []).push({ event: "Lead", lead_type: data.type });
+            } catch (e) { }
           } else if (r.status === 422 && j.errors) {
             status.textContent = "Please check: " + j.errors.join("; ") + ".";
           } else {

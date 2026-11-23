@@ -451,4 +451,30 @@ a { color: inherit; text-underline-offset: .2em; text-decoration-thickness: 1px;
   .site-head, .rail, .scroll-cue, .land__media, .day__media { display: none !important; }
   .ch--land { height: auto; min-height: 0; }
 }
+
+/* --- privacy: footer row, cookie notice, opt-out controls ------------------- */
+.site-foot__privacy { flex-basis: 100%; display: flex; flex-wrap: wrap; gap: .6rem 1.6rem; align-items: center; }
+.site-foot__privacy a, .site-foot .linkbtn { font-size: 1rem; color: #fbf9f5; }
+.linkbtn { background: none; border: 0; padding: 0; font: inherit; text-decoration: underline; text-underline-offset: .2em; cursor: pointer; color: inherit; min-height: 44px; }
+.linkbtn:focus-visible, .consent button:focus-visible, .privacy-controls button:focus-visible { outline: 3px solid var(--focus); outline-offset: 3px; }
+.consent { position: fixed; z-index: 200; left: 0; right: 0; bottom: 0; background: var(--paper); color: var(--ink);
+  border-top: 3px solid var(--clay); box-shadow: 0 -10px 30px rgba(21, 19, 17, .12); }
+.consent[hidden] { display: none; }
+.consent__inner { width: min(100% - 2 * var(--gutter), 1100px); margin-inline: auto; padding: 1.2rem 0;
+  display: flex; flex-wrap: wrap; gap: 1rem 2rem; align-items: center; justify-content: space-between; }
+.consent__text { margin: 0; flex: 1 1 32ch; font-size: 1.05rem; line-height: 1.5; color: var(--ink); }
+.consent__text a { color: var(--clay-ink); }
+.consent__actions { display: flex; gap: .8rem; }
+.consent__actions .btn { min-width: 7.5rem; min-height: 48px; font-size: .8rem; }
+@media (max-width: 760px) {
+  .consent { bottom: 56px; }                       /* sits above the phone action bar */
+  .consent__actions { width: 100%; }
+  .consent__actions .btn { flex: 1; }
+}
+.privacy-meta p { margin: 1.6rem 0 0; color: var(--ink-soft); }
+.privacy-controls { display: flex; flex-wrap: wrap; gap: .8rem; align-items: center; margin-top: 1.6rem; }
+.privacy-controls__status { flex-basis: 100%; margin: 0; font-weight: 500; color: var(--ink); }
+.site-foot__social { flex-basis: 100%; display: flex; flex-wrap: wrap; gap: .4rem 1.6rem; }
+.site-foot__social a { display: inline-flex; align-items: center; min-height: 44px; text-decoration: none; letter-spacing: .1em; text-transform: uppercase; font-size: .8rem; color: #fbf9f5; }
+.site-foot__social a:hover { text-decoration: underline; }
 .scape--photo picture { display: block; width: 100%; height: 100%; }
