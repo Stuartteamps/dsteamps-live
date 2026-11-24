@@ -124,3 +124,14 @@
   .hs-facts { letter-spacing: .1em; }
   .hs-card { padding: 1.2rem 1rem; }
 }
+
+/* Listing pages without a photo hero (homes not active on the MLS) and
+   portrait-only galleries (phone photography), 2026-11-24. */
+.fn-hero--listing .fn-listing__title { color: var(--ink); }
+.fn-hero--listing .hs-city, .fn-hero--listing .hs-facts, .fn-hero--listing .hs-price { color: var(--ink); }
+.fn-hero--listing .hs-mls { color: var(--clay-ink); }
+.hs-price--status { font-size: clamp(1.4rem, 1.2rem + .9vw, 2rem); }
+.hs-ctas { display: flex; flex-wrap: wrap; gap: .75rem; margin: 0 0 1rem; }
+@media (min-width: 720px) { .hs-gallery--portrait { grid-template-columns: repeat(3, 1fr); } }
+.hs-gallery--portrait img { aspect-ratio: 3 / 4; }
+.hs-linkcard__type span + span { display: block; }
